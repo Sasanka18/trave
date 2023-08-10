@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="wide=device-width,initial-scale=1.0">
+<Title>The Traveller By Sasanka Rathnayake</Title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://kit.fontawesome.com/fee06ff9f0.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="header">
+    <nav id="navBar">
+        <img src="images/Travel.png" class="logo">
+        <ul class="nav-links">
+            <li><a href="#Around the World">Around the World</a></li>
+            <li><a href="#Up comming">Up comming </a></li>
+            <li><a href="#Achivements">Achivements</a></li>
+            <li><a href="projects.php">sign in</a></li>
+            <li><a href="login.php">Log in</a></li>
+        </ul>
+        <script>// Smooth scrolling function
+            function smoothScroll(target, duration) {
+              var targetElement = document.querySelector(target);
+              var targetPosition = targetElement.offsetTop;
+              var startPosition = window.pageYOffset;
+              var distance = targetPosition - startPosition;
+              var startTime = null;
+            
+              function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                var timeElapsed = currentTime - startTime;
+                var run = ease(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+              }
+            
+              // Easing function
+              function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+              }
+            
+              requestAnimationFrame(animation);
+            }
+            
+            // Attach smooth scrolling to navigation links
+            var navLinks = document.querySelectorAll('#navbar a');
+            navLinks.forEach(function (navLink) {
+              navLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                var target = navLink.getAttribute('href');
+                smoothScroll(target, 1000);
+              });
+            });
+            </script>
+        <i class="fa-solid fa-bars"onclick="togglebtn()"></i>
+    </nav>
+
+    <div class="container">
+        <h1>EXPLORE THE WORLD</h1>
+    </div>
+    
+</div>
+
+  <style>
+    /* Form container */
+    #contact-form {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+  
+    /* Form fields */
+    label {
+      padding: 10px;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #4a4747;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+  
+    /* Submit button */
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+  
+    /* Error messages */
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>
+  
+  <form action="connect.php" method="post">
+    <h3 style="font-style: italic; font-size: 30px;">CHANCE TO TRAVEL WITH ME!</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required name="name">
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" required name="email">
+
+    
+  
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" required pattern="[0-9]{10}" name="phone">
+  
+    <input type="submit" value="Submit">
+  </form>
+  
+  <script>
+   
+const contactForm = document.getElementById('contact-form');
+
+
+function validateForm(event) {
+  
+  event.preventDefault();
+
+  
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+
+ 
+  if (nameInput.value.trim() === '') {
+    alert('Please enter your name.');
+    nameInput.focus();
+    return false;
+  }
+
+  
+  if (emailInput.value.trim() === '') {
+    alert('Please enter your email address.');
+    emailInput.focus();
+    return false;
+  } else if (!validateEmail(emailInput.value)) {
+    alert('Please enter a valid email address.');
+    emailInput.focus();
+    return false;
+  }
+
+ 
+  if (phoneInput.value.trim() === '') {
+    alert('Please enter your phone number.');
+    phoneInput.focus();
+    return false;
+  } else if (!validatePhoneNumber(phoneInput.value)) {
+    alert('Please enter a valid 10-digit phone number.');
+    phoneInput.focus();
+    return false;
+  }
+
+ 
+  alert('Form submitted successfully!');
+  contactForm.reset();
+}
+
+
+contactForm.addEventListener('submit', validateForm);
+
+
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+
+function validatePhoneNumber(phone) {
+  const phoneRegex = /^\d{10}$/;
+  return phoneRegex.test(phone);
+}
+
+  </script>
+  <div id="additional-info" >
+    <p >Those who like to join us can fill this form I will contact you!</p>
+  </div>
+  
+  <button id="toggle-button" style="color: red; left: 50%;">More Information....</button>
+  
+<section id="section1">
+<div class="container">
+<a name="Around the World"></a>
+<h2 class="sub-titles">Around the World</h2>
+<div class="exclusives">
+    <div>
+        <img src="images/image-1.png">
+        <span>
+            <h3>London</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-2.png">
+        <span>
+            <h3>Switzerland</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-3.png">
+        <span>
+            <h3>Australia</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-4.png">
+        <span>
+            <h3>France</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-5.png">
+        <span>
+            <h3>Amsterdam</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-6.png">
+        <span>
+            <h3>Netherland</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-7.png">
+        <span>
+            <h3>New york</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-8.png">
+        <span>
+            <h3>Chicargo</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-9.png">
+        <span>
+            <h3>San-Fancisco</h3>
+        </span>
+    </div>
+    <div>
+        <img src="images/image-10.png">
+        <span>
+            <h3>Shanghai</h3>
+        </span>
+    </section>
+    </div>
+
+<div id="slider">
+    <div id="box" style="width: 600px;height: 700px;">
+        <img src="tr1.jpg" style="width: 600px; height: 400px; position:relative;">
+       
+        
+    </div>
+    <button class="prew" onclick="prewImage()" style="color: black;">-</button>
+    <button class="next" onclick="nextImage()" style="color: #000;">+</button>
+
+</div>
+<script type="text/javascript">
+var slider_content=document.getElementById('box');
+
+var image=['tr1','tr2','tr3'];
+var i= image.length;
+function nextImage(){
+    if(i>image.length){
+        i=i+1;
+    }else{
+        i=1;
+    }
+    slider_content.innerHTML="<img src="+image[i-1]+".jpg>";
+}
+
+function prewImage(){
+    if(i>image.length+1 && i>1){
+        i=i-1;
+    }else{
+        i=image.length;
+    }
+    slider_content.innerHTML="<img src="+image[i-1]+".jpg>";
+}
+
+</script>
+</div>
+<section id="section2">
+<a name="Up comming"></a>
+<h2 class="sub-titles">Up comming</h2>
+<div class="trending">
+    <div>
+        <img src="images/dubai.png">
+        
+            <h3>Dubai</h3>
+        
+</div>
+<div>
+    <img src="images/new-york.png">
+    
+        <h3>New-York</h3>
+    
+</div>
+<div>
+    <img src="images/paris.png">
+    
+        <h3>Paris</h3>
+    
+</div>
+<div>
+    <img src="images/new-delhi.png">
+    
+        <h3>New-Delhi</h3>
+    
+</div>
+
+</div>
+
+</div>
+</section>
+<section id="section3">
+<a name="Achivements"></a>
+<h2 class="sub-titles">Achivements</h2>
+<div class="achivements">
+    <div>
+        <img src="images/story-1.png">
+        
+            <h3>Europ</h3>
+        
+</div>
+<div>
+    <img src="images/story-2.png">
+    
+        <h3>100+ Countries</h3>
+    
+</div>
+<div>
+    <img src="images/story-3.png">
+    
+        <h3>Thailand</h3>
+    
+</div>
+
+
+</div>
+
+</section>
+<script>
+    
+function isInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+
+function handleScroll() {
+  var sections = document.querySelectorAll('section');
+  var elements = document.querySelectorAll('.fade-in');
+
+  sections.forEach(function (section) {
+    if (isInViewport(section)) {
+      section.style.opacity = 1;
+      section.style.transform = 'translateY(0)';
+    } else {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(100px)';
+    }
+  });
+
+  elements.forEach(function (element) {
+    if (isInViewport(element)) {
+      element.style.opacity = 1;
+      element.style.transform = 'translateY(0)';
+    } else {
+      element.style.opacity = 0;
+      element.style.transform = 'translateY(50px)';
+    }
+  });
+}
+
+// Attach scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+</script>
+    <div class="fotter">
+        <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instergram.com/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+        <hr>
+        <p>Copyrigt 2023,The Traveller</p>
+    </div>
+</div>
+<script>
+    var navBar=document.getElementById("navBar");
+    function togglebtn(){
+        navBar.classList.toggle("hidemenu");
+    }
+</script>
+<div class="container">
+    
+    <form action="registration.php" method="post">
+        <div class="form-group">
+        <input type="text" name="full name" placeholder="Full name">
+    </div>
+    <div class="form-group">
+        <input type="text" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <input type="text" name="password" placeholder="password">
+    </div>
+    <div class="form-group">
+        <input type="text" name="repeat password" placeholder="Repeat password">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Register" name="submit">
+    </div>
+
+    </form>
+</div>
+
+</body>
+</html>
+<script>
+    
+const additionalInfo = document.getElementById('additional-info');
+const toggleButton = document.getElementById('toggle-button');
+
+
+function toggleAdditionalInfo() {
+  if (additionalInfo.style.display === 'none') {
+    additionalInfo.style.display = 'block';
+  } else {
+    additionalInfo.style.display = 'none';
+  }
+}
+
+
+toggleButton.addEventListener('click', toggleAdditionalInfo);
+</script>
+<script>
+   
+    const slides=document.querySelectorALL(".slide")
+    var counter=0;
+    slides.forEach(
+        (slide,index) =>{
+       slide.style.left=${index*100}%
+        }
+    );
+    
+    </script>
